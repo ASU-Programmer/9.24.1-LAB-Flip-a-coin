@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class LabProgram {
+   public static String headsOrTails(Random rand) {
+    
+    int r;
+    String result = new String();
+    r = rand.nextInt(2);
+    
+    if (r == 0) {
+      result = "heads";
+    }
+    else {
+       result = "tails";
+    }
+    
+    return result;
+   }
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      Random rand = new Random(2); // Unique seed
+      
+      int tries;
+      tries = scnr.nextInt();
+      
+      for (int i = 1; i <= tries; i++) {
+       System.out.println(headsOrTails(rand));  
+      }
+   }
+}
